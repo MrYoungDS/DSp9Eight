@@ -182,7 +182,19 @@ public class BoardTest {
         assertTrue(board1.equals(board1));
         assertTrue(board1.equals(board2));
         assertFalse(board1.equals(board3));
-        // add typed-in arrays
+        Board board4 = new Board(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
+        int[][] grid5 = new int[3][3];
+        grid5[0][0] = 1;
+        grid5[0][1] = 2;
+        grid5[0][2] = 3;
+        grid5[1][0] = 4;
+        grid5[1][1] = 5;
+        grid5[1][2] = 6;
+        grid5[2][0] = 7;
+        grid5[2][1] = 8;
+        grid5[2][2] = 9;
+        Board board5 = new Board(grid5);
+        assertEquals(board4, board5);
     }
 
     @Test
@@ -197,10 +209,6 @@ public class BoardTest {
             Board testTwin = test.twin();
             String testString = test.toString();
             String twinString = testTwin.toString();
-            System.out.println("testString is ");
-            System.out.println(testString);
-            System.out.println("twinString is ");
-            System.out.println(twinString);
             int[][] testTiles = stringToTiles(testString);
             int[][] twinTiles = stringToTiles(twinString);
 
